@@ -23,7 +23,7 @@ pipeline {
            steps {
                script {         
                  def customImage = docker.build('cicdcontainer/petclinicapp', "./docker")
-                 docker.withRegistry('https://registry.hub.docker.com', 'dockerhubid') {
+                 docker.withRegistry('https://registry.hub.docker.com', 'dockerhubrepoid') {
                  customImage.push("${env.BUILD_NUMBER}")
                  }                     
            }
