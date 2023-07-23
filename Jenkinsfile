@@ -22,7 +22,7 @@ pipeline {
         stage('Build docker image') {
            steps {
                script {         
-                 def customImage = docker.build('cicdcontainer/petclinicapp', "./docker")
+                 def customImage = docker.build('suridevops/spring-app', "./docker")
                  docker.withRegistry('https://registry.hub.docker.com', 'dockerhubrepoid') {
                  customImage.push("${env.BUILD_NUMBER}")
                  }                     
